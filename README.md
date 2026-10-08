@@ -1,0 +1,18 @@
+## Project Structure & Core Scripts
+- **Grid_Search.m**: Performs a multi-objective parallel grid search optimization of network parameters ($J_E, J_I, a_E, b_E, d_E$) across experimental conditions, utilizing checkpointing and automated sequential filtering.
+- **Classification.m**: Unified script to process experimental data via Bruno Toolbox or aggregate successful model permutations to compute Medians, IQRs, and statistical similarity metrics (L1 error, Cosine similarity, Chi-square).
+- **FiringRate.m** & **FringRate_Comparison.m**: Computes population-level temporal firing rates, individual neuronal frequencies, and performs Wilcoxon rank-sum tests with Holm-Bonferroni correction.
+- **ISI_Analysis.m**: Analyzes Inter-Spike Intervals (ISI), generates comparative histograms, and evaluates pairwise differences across conditions.
+- **Raster_Plot.m**: Generates rate-sorted raster plots with high-performance vectorized line rendering.
+- **Maps.m**: Visualizes spatial neuronal distribution maps alongside network topology (excitatory and inhibitory connections).
+- **Recurrence_Analysis.m**: Computes PCA trajectories of smoothed neural activity and detects recurrence percentages and coalescence times.
+- **Commun_PCA.m**: Fits a shared Principal Component Analysis (PCA) space across all conditions for direct, unifies multi-dimensional trajectory comparisons.
+- **Parameter_Analysis.m**: Extracts optimal model parameters, filters successful permutations, and tracks paired deltas and trajectory changes across condition transitions.
+- **Functions/**: Centralized repository of auxiliary functions:
+  - format_spikes.m: standardized spike formatting
+  - export_figure.m: multi-format figure exporting
+  - get_project_colors.m: color consistency 
+  - apply_holm_correction.m: statistical p-value corrections
+  - evaluate_grid_point.m: Simulates and evaluates parameter combinations for network optimization
+  - ReduceDataFx.m: Filters and prepares experimental spike recordings for Bruno Toolbox
+  - RunBrunoAnalysis.m, fitMLEdistribution, Analyse_Spike_Train_Properties_MOD.m: Bruno et al. 2015 modified code
